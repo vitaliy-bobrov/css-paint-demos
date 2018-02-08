@@ -7,13 +7,22 @@
     }
   };
 
-  const controls = Array.from(document.querySelectorAll('[data-prop-control]'));
+  const init = () => {
+    const controls = Array.from(document.querySelectorAll('[data-prop-control]'));
+    const style = getComputedStyle(document.documentElement);
 
-  controls.forEach(control => {
-    reflectProp(control.dataset.prop, control.value);
-  });
+    controls.forEach(control => {
+      const prop = control.dataset.prop;
+      const value = style.getPropertyValue(prop).toString().trim();
 
-  document.addEventListener('change', event => {
+      control.value = value;
+      reflectProp(prop, value);
+    });
+  };
+
+  init();
+
+  document.addEventListener('input', event => {
     const data = event.target.dataset;
 
     if (!'data-prop-control' in data) {

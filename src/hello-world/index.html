@@ -21,7 +21,9 @@
   </div>
 
   <script>
-    CSS.paintWorklet.addModule('paint.js');
+    if ('paintWorklet' in CSS) {
+      CSS.paintWorklet.addModule('paint.js');
+    }
   </script>
 </body>
 </html>
