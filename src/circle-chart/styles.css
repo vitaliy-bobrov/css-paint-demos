@@ -1,7 +1,7 @@
 :root {
-  --chart-inner-radius: 0;
+  --chart-inner-radius: 10;
   --chart-outer-radius: 100;
-  --chart-value: 0;
+  --chart-value: 10;
 }
 
 .chart {
