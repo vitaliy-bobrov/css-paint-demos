@@ -1,0 +1,24 @@
+{
+  "name": "css-paint-demos",
+  "version": "1.0.0",
+  "description": "CSS Paint API Demonstration",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "browser-sync start --config bs-config.js",
+    "deploy": "gh-pages -d src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitaliy-bobrov/css-paint-demos.git"
+  },
+  "author": "Vitaliy Bobrov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vitaliy-bobrov/css-paint-demos/issues"
+  },
+  "homepage": "https://github.com/vitaliy-bobrov/css-paint-demos#readme",
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "gh-pages": "^1.1.0"
+  }
+}
