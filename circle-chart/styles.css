@@ -1,0 +1,12 @@
+:root {
+  --chart-inner-radius: 0;
+  --chart-outer-radius: 100;
+  --chart-value: 0;
+}
+
+.chart {
+  overflow: hidden;
+  height: 0;
+  padding-top: 50%;
+  background: #999 paint(circle-chart, #795548, #FF5722);
+}

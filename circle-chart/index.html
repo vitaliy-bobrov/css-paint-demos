@@ -13,42 +13,36 @@
 <body>
   <div class="paper container">
     <h1>CSS Paint API Demo</h1>
-    <h2>Circles with Variables</h2>
+    <h2>Circle Chart</h2>
 
     <div class="row flex-center">
-      <div class="sm-12 md-6 col border border-primary circles"></div>
+      <div class="sm-12 md-6 col border border-primary chart"></div>
     </div>
 
     <div class="row flex-center">
       <div class="sm-12 md-6 col border border-3 border-primary">
-        <label>--circles-offset: <span data-prop-reflect="--circles-offset"></span>
+        <label>--chart-inner-radius: <span data-prop-reflect="--chart-inner-radius"></span>
           <input type="range"
-                min="-50"
-                max="30"
-                step="5"
+                min="0"
+                max="99"
                 data-prop-control
-                data-prop="--circles-offset">
+                data-prop="--chart-inner-radius">
         </label>
 
-        <label>--circles-count: <span data-prop-reflect="--circles-count"></span>
+        <label>--chart-outer-radius: <span data-prop-reflect="--chart-outer-radius"></span>
           <input type="range"
                  min="1"
-                 max="10"
+                 max="100"
                  data-prop-control
-                 data-prop="--circles-count">
+                 data-prop="--chart-outer-radius">
         </label>
 
-        <label>--circles-opacity: <span data-prop-reflect="--circles-opacity"></span>
+        <label>--chart-value: <span data-prop-reflect="--chart-value"></span>
           <input type="range"
                  min="0"
-                 max="1"
-                 step="0.1"
+                 max="100"
                  data-prop-control
-                 data-prop="--circles-opacity">
-        </label>
-
-        <label>Background: <span data-prop-reflect="--bg"></span>
-          <input type="color" data-prop-control data-prop="--bg">
+                 data-prop="--chart-value">
         </label>
       </div>
     </div>

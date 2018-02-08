@@ -11,7 +11,8 @@ class CirclesPainter {
     const offset = parseInt(props.get('--circles-offset').toString(), 10) || 0;
     const count = parseInt(props.get('--circles-count').toString(), 10) || 2;
     const opacity = parseFloat(props.get('--circles-opacity').toString()) || 1;
-    const radius = Math.max(Math.round(((geom.width / count) - offset * 2) / 2), 10);
+    const size = Math.min(geom.width, geom.height);
+    const radius = Math.max(Math.round(((size / count) - offset * 2) / 2), 10);
     const point = radius + offset;
 
     for (let i = 0; i < count; i++) {

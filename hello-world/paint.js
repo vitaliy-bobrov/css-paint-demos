@@ -1,7 +1,8 @@
 class CirclesPainter {
   paint(ctx, geom, props) {
     const offset = 10;
-    const radius = (geom.width / 4) - offset;
+    const size = Math.min(geom.width, geom.height);
+    const radius = (size / 4) - offset;
     const point = radius + offset;
 
     for (let i = 0; i < 2; i++) {
