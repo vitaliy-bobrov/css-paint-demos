@@ -2,13 +2,11 @@
   --chart-inner-radius: 0;
   --chart-outer-radius: 100;
   --chart-value: 10;
-  --chart-background: #795548;
-  --chart-foreground: #FF5722;
 }
 
 .chart {
   overflow: hidden;
   height: 0;
   padding-top: 50%;
-  background: #999 paint(circle-chart);
+  background: #999 paint(circle-chart, #795548, #FF5722);
 }

@@ -2,7 +2,6 @@
   --circles-count: 2;
   --circles-offset: 10;
   --circles-opacity: 1;
-  --bg: #ffffff;
 }
 
 .circles {
@@ -10,5 +9,5 @@
   height: 0;
   padding-top: 50%;
   background: #000;
-  background: var(--bg) paint(circles);
+  background: paint(circles);
 }
