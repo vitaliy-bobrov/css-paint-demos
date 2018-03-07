@@ -3,23 +3,24 @@ class CircleChartPainter {
     return [
       '--chart-inner-radius',
       '--chart-outer-radius',
-      '--chart-value',
-      '--chart-background',
-      '--chart-foreground'
+      '--chart-value'
     ];
   }
 
-  paint(ctx, geom, props) {
+  static get inputArguments() {
+    return ['<color>', '<color>'];
+  }
+
+  paint(ctx, geom, props, args) {
     const outerR = parseInt(props.get('--chart-outer-radius').toString(), 10) || 100;
     const innerR = parseInt(props.get('--chart-inner-radius').toString(), 10) || 0;
     const value = parseFloat(props.get('--chart-value').toString()) || 0;
-    const background = props.get('--chart-background') || 'red';
-    const foreground = props.get('--chart-foreground') || 'blue';
     const size = Math.min(geom.width, geom.height);
     const outerRadius = size * outerR / 200;
     const innerRadius = size * innerR / 200;
     const x = geom.width / 2;
     const y = geom.height / 2;
+    const [background, foreground] = args;
 
     ctx.fillStyle = background.toString();
 
