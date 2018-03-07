@@ -1,5 +1,6 @@
 class CirclesPainter {
   paint(ctx, geom, props) {
+    console.log('paint render');
     const offset = 10;
     const size = Math.min(geom.width, geom.height);
     const radius = (size / 4) - offset;
