@@ -24,6 +24,7 @@
 
   document.addEventListener('input', event => {
     const data = event.target.dataset;
+    const value = event.target.value;
 
     if (!'data-prop-control' in data) {
       return;
