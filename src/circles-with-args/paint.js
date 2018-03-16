@@ -1,0 +1,34 @@
+class CirclesPainter {
+  static get inputArguments() {
+    return [
+      '<number>',
+      '<number>',
+      '<percentage>'
+    ];
+  }
+
+  paint(ctx, geom, props, args) {
+    console.log('paint render');
+    const offset = args[0].value;
+    const count = args[1].value;
+    const opacity = args[2].value / 100;
+    const size = Math.min(geom.width, geom.height);
+    const radius = Math.max(Math.round(((size / count) - offset * 2) / 2), 10);
+    const point = radius + offset;
+
+    for (let i = 0; i < count; i++) {
+      for (let j = 0; j < count; j++) {
+        ctx.fillStyle = `rgba(0,
+          ${Math.floor(255 - 42.5 * i)},
+          ${Math.floor(255 - 42.5 * j)},
+          ${opacity})`;
+
+        ctx.beginPath();
+        ctx.arc(point + (i * (point * 2)), point + (j * (point * 2)), radius, 0, 2 * Math.PI);
+        ctx.fill();
+      }
+    }
+  }
+}
+
+registerPaint('circles', CirclesPainter);
