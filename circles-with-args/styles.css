@@ -1,0 +1,8 @@
+
+.circles {
+  overflow: hidden;
+  height: 0;
+  padding-top: 50%;
+  background: #000;
+  background: paint(circles, 2, 10, 100%);
+}
