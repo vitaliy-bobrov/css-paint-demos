@@ -1,0 +1,7 @@
+.bars {
+  height: 700px;
+  max-height: 50vh;
+  background: #000;
+  --bar-map: 50 #666, 70 salmon, 35 #9ee7a1, 15 rebeccapurple;
+  background: #111 paint(bar-chart, bottom, 40);
+}
