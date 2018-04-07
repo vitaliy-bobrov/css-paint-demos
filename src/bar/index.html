@@ -15,19 +15,31 @@
     <h1>Bar Chart</h1>
 
     <div class="row flex-center">
-      <div class="sm-10 col border border-primary bars"></div>
+      <div class="sm-12 col border border-primary bars"></div>
 
-      <div class="sm-2 col border border-3 border-primary">
-        <select id="position">
-          <option value="top">top</option>
-          <option value="right">right</option>
-          <option value="left">left</option>
-          <option value="bottom">bottom</option>
-        </select>
+      <div class="sm-12 col border border-3 border-primary">
+        <label>--bar-placement: <span data-prop-reflect="--bar-placement"></span>
+          <select data-prop-control
+                  data-prop="--bar-placement">
+            <option value="top">top</option>
+            <option value="right">right</option>
+            <option value="left">left</option>
+            <option value="bottom">bottom</option>
+          </select>
+        </label>
+
+        <label>--bar-gap: <span data-prop-reflect="--bar-gap"></span>
+          <input type="range"
+                 min="0"
+                 max="50"
+                 data-prop-control
+                 data-prop="--bar-gap">
+        </label>
       </div>
     </div>
   </div>
 
+  <script src="../js/update-css-variable.js"></script>
   <script>
     if ('paintWorklet' in CSS) {
       CSS.paintWorklet.addModule('paint.js');

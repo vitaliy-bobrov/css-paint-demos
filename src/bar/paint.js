@@ -2,6 +2,8 @@ class BarChartPainter {
   static get inputProperties() {
     return [
       '--bar-map',
+      '--bar-placement',
+      '--bar-gap',
       'padding-top',
       'padding-right',
       'padding-bottom',
@@ -9,15 +11,9 @@ class BarChartPainter {
     ];
   }
 
-  static get inputArguments() {
-    return [
-      'top | right | bottom | left', // position
-      '<number>' // gap
-    ];
-  }
-
-  paint(ctx, geom, props, args) {
-    const [{value: position}, {value: gap}] = args;
+  paint(ctx, geom, props) {
+    const position = props.get('--bar-placement').toString().trim();
+    const gap = parseInt(props.get('--bar-gap').toString(), 10);
     const padding = {
       top: props.get('padding-top').value,
       right: props.get('padding-right').value,
