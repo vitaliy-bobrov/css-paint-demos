@@ -1,0 +1,15 @@
+:root {
+  --rating: 3;
+  --star-corners: 5;
+}
+
+.rating {
+  max-width: 500px;
+  min-width: 200px;
+  margin: 0 auto;
+  height: 60px;
+  background: #000;
+  stroke: orange;
+  fill: orange;
+  background: paint(star-rating);
+}
