@@ -1,0 +1,64 @@
+:root {
+  --bar-placement: bottom;
+  --bar-gap: 40;
+  --bar-map: [
+    {
+      "value": 55,
+      "color": "rgba(250, 128, 114, .8)"
+    },
+    {
+      "value": 10,
+      "color": "rgba(102, 51, 153, .9)"
+    },
+    {
+      "value": 120,
+      "color": "hsl(39, 100%, 50%)"
+    },
+    {
+      "value": 36.8,
+      "color": "#666"
+    },
+    {
+      "value": 97.5,
+      "color": "#9ee7a1"
+    }
+  ];
+}
+
+.bars {
+  height: 700px;
+  max-height: 50vh;
+  padding: 10px;
+  background: #111 paint(bar-chart);
+}
+
+.bars:hover {
+  --bar-map: [
+    {
+      "value": 5,
+      "color": "rgba(250, 128, 114, .8)"
+    },
+    {
+      "value": 100,
+      "color": "rgba(102, 51, 153, .9)"
+    },
+    {
+      "value": 21,
+      "color": "hsl(39, 100%, 50%)"
+    },
+    {
+      "value": 120,
+      "color": "#666"
+    },
+    {
+      "value": 37,
+      "color": "#9ee7a1"
+    }
+  ];
+}
+
+@supports not (background: paint(bar-chart)) {
+  .bars:after {
+    content: 'Your browser does not support CSS Paint API :(';
+  }
+}
