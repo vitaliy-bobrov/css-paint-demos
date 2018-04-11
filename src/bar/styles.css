@@ -12,7 +12,7 @@
   background: #111 paint(bar-chart);
 }
 
-@supports not (paint(id)) {
+@supports not (background: paint(bar-chart)) {
   .bars:after {
     content: 'Your browser does not support CSS Paint API :(';
   }
