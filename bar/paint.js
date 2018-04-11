@@ -11,9 +11,28 @@ class BarChartPainter {
     ];
   }
 
+  _parseData(input) {
+    return input.toString()
+    .split(',')
+    .map(entry => {
+      const [value, color] = entry.trim().split(' ');
+
+      return {
+        value: parseFloat(value, 10) || 0,
+        color: color || 'black'
+      };
+    });
+  }
+
+  _getMax(dataset) {
+    return dataset.reduce((maxVal, entry) => {
+      return maxVal < entry.value ? entry.value : maxVal;
+    }, 0);
+  }
+
   paint(ctx, geom, props) {
     const position = props.get('--bar-placement').toString().trim();
-    const gap = parseInt(props.get('--bar-gap').toString(), 10);
+    const gap = parseInt((props.get('--bar-gap') || 10).toString(), 10);
     const padding = {
       top: props.get('padding-top').value,
       right: props.get('padding-right').value,
@@ -23,21 +42,9 @@ class BarChartPainter {
     const vertical = position === 'top' || position === 'bottom';
     const width = geom.width - padding.left - padding.right;
     const height = geom.height - padding.top - padding.bottom;
-    const data = props.get('--bar-map')
-      .toString()
-      .split(',')
-      .map(entry => {
-        const [value, color] = entry.trim().split(' ');
+    const data = this._parseData(props.get('--bar-map'));
+    const max = this._getMax(data);
 
-        return {
-          value: parseFloat(value, 10) || 0,
-          color: color || 'black'
-        };
-      });
-
-    const max = data.reduce((maxVal, entry) => {
-      return maxVal < entry.value ? entry.value : maxVal;
-    }, 0);
     const domain = vertical ? height : width;
     const baseWidth = vertical ? width : height;
     const multiplier = domain / max;

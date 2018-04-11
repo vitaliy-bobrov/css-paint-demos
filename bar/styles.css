@@ -1,12 +1,37 @@
 :root {
   --bar-placement: bottom;
   --bar-gap: 40;
+  --bar-padding-h: 10px;
 }
 
 .bars {
   height: 700px;
   max-height: 50vh;
-  background: #000;
+  padding: 30px var(--bar-padding-h) 0;
   --bar-map: 50 #666, 70 salmon, 35 #9ee7a1, 15 rebeccapurple, 25 orange;
   background: #111 paint(bar-chart);
+}
+
+@supports not (paint(id)) {
+  .bars:after {
+    content: 'Your browser does not support CSS Paint API :(';
+  }
+}
+
+.x-axis {
+  display: flex;
+  justify-content: stretch;
+  padding: 0 var(--bar-padding-h);
+  border-top: 2px solid rosybrown;
+}
+
+.x-axis .tick {
+  flex-grow: 1;
+  flex-basis: 0;
+  text-align: center;
+  line-height: 20px;
+}
+
+.x-axis .tick:not(:last-of-type) {
+  padding-right: calc(var(--bar-gap)* 1px);
 }
