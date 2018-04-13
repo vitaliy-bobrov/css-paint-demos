@@ -21,10 +21,10 @@ class BarChartPainter {
     const position = props.get('--bar-placement').toString().trim();
     const gap = parseInt((props.get('--bar-gap') || 10).toString(), 10);
     const padding = {
-      top: props.get('padding-top').value,
-      right: props.get('padding-right').value,
-      bottom: props.get('padding-bottom').value,
-      left: props.get('padding-left').value
+      top: props.get('padding-top').value || 10,
+      right: props.get('padding-right').value || 10,
+      bottom: props.get('padding-bottom').value || 10,
+      left: props.get('padding-left').value || 10
     };
     const vertical = position === 'top' || position === 'bottom';
     const width = geom.width - padding.left - padding.right;
