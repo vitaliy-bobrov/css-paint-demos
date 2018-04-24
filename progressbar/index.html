@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="https://unpkg.com/papercss@1.4.1/dist/paper.min.css">
+  <link rel="stylesheet" href="styles.css">
+
+  <title>CSS Paint API Demo</title>
+</head>
+<body>
+  <div class="paper container">
+    <h1>Progress Bar</h1>
+
+    <div class="row flex-center">
+      <div class="sm-12 col border border-primary wrapper">
+        <button class="paper-btn btn-large download js-download">Download</button>
+        <div class="progress js-progress"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    if ('registerProperty' in CSS) {
+      CSS.registerProperty({
+        name: '--progress',
+        syntax: '<percentage>',
+        inherits: false,
+        initialValue: '0%'
+      });
+
+      CSS.registerProperty({
+        name: '--progress-particles',
+        syntax: '<number>',
+        inherits: false,
+        initialValue: 50
+      });
+
+      CSS.registerProperty({
+        name: '--progress-color',
+        syntax: '<color>',
+        inherits: false,
+        initialValue: 'green'
+      });
+    }
+
+    if ('paintWorklet' in CSS) {
+      CSS.paintWorklet.addModule('paint.js');
+    }
+
+    const btn = document.querySelector('.js-download');
+    const bar = document.querySelector('.js-progress');
+    const animCN = 'animate';
+    const animTime = 3000;
+    let tid = null;
+
+    btn.addEventListener('click', event => {
+      event.preventDefault();
+      tid && clearTimeout(tid);
+
+      bar.classList.remove(animCN);
+      btn.disabled = true;
+
+      bar.classList.add(animCN);
+
+      tid = setTimeout(() => {
+        btn.disabled = false;
+      }, animTime);
+    });
+  </script>
+</body>
+</html>
