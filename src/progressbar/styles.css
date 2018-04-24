@@ -1,0 +1,44 @@
+.download {
+  margin-bottom: 20px;
+}
+
+.progress {
+  height: 290px;
+  padding: 170px 30px 100px;
+  --progress: 0%;
+  --progress-particles: 50;
+  --progress-color: #ff1744;
+  background: paint(progress-bar, rgba(0, 0, 0, .36));
+}
+
+.progress.animate {
+  animation: 3s linear prog forwards;
+}
+
+@keyframes prog {
+  0% {
+    --progress: 0%;
+    --progress-particles: 50;
+    --progress-color: #ff1744;
+  }
+
+  25% {
+    --progress-color: #ff9100;
+  }
+
+  50% {
+    --progress-color: #c6ff00;
+  }
+
+  90% {
+    --progress-particles: 10;
+    --progress-color: #00e676;
+  }
+
+  100% {
+    --progress: 100%;
+    --progress-particles: 0;
+    --progress-color: #00e676;
+  }
+}
+
