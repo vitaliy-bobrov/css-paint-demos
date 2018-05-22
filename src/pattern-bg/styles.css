@@ -1,0 +1,30 @@
+.pattern-bg {
+  overflow: hidden;
+  height: 0;
+  padding-top: 50%;
+  background-color: #ecd078;
+  background-image: paint(pattern-bg, #d95b43 #c02942 #53777a #542437);
+  background-size: 50%;
+}
+
+.pattern-bg.material {
+  background-color: #795548;
+  background-image: paint(pattern-bg,
+    #9C27B0
+    #E91E63
+    #D50000
+    #673AB7
+    #3F51B5
+    #2196F3
+    #03A9F4
+    #00BCD4
+    #009688
+    #4CAF50
+    #8BC34A
+    #CDDC39
+    #FFEB3B
+    #FFC107
+    #FF9800
+    #FF5722
+  );
+}
