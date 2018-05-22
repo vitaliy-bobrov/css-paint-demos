@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="https://unpkg.com/papercss@1.4.1/dist/paper.min.css">
+  <link rel="stylesheet" href="styles.css">
+
+  <title>CSS Paint API Demo</title>
+</head>
+<body>
+  <div class="paper container">
+    <h1>Pattern Background</h1>
+
+    <p>Inspired by <a href="https://codepen.io/timseverien/full/wjEBNp/" target="_blank">https://codepen.io/timseverien/full/wjEBNp/</a></p>
+
+    <div class="row flex-center">
+      <div class="sm-6 col border border-primary js-pattern pattern-bg"></div>
+    </div>
+
+    <label>Material palette:
+      <input type="checkbox" id="material-class">
+    </label>
+  </div>
+
+  <script>
+    if ('paintWorklet' in CSS) {
+      CSS.paintWorklet.addModule('paint.js');
+    }
+
+    const checkbox = document.querySelector('#material-class');
+    const canvas = document.querySelector('.js-pattern');
+    const className = 'material';
+
+    checkbox.addEventListener('change', function(event) {
+      if (event.target.checked) {
+        canvas.classList.add(className);
+      } else {
+        canvas.classList.remove(className);
+      }
+    });
+  </script>
+</body>
+</html>
