@@ -9,9 +9,9 @@ class CirclesPainter {
 
   paint(ctx, geom, props, args) {
     console.log('paint render');
-    const offset = args[0].value;
-    const count = args[1].value;
-    const opacity = args[2].value / 100;
+    const offset = parseInt(args[0].toString(), 10);
+    const count = parseInt(args[1].toString(), 10);
+    const opacity = parseInt(args[2].toString(), 10) / 100;
     const size = Math.min(geom.width, geom.height);
     const radius = Math.max(Math.round(((size / count) - offset * 2) / 2), 10);
     const point = radius + offset;
