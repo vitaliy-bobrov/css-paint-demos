@@ -3,8 +3,7 @@ class CirclesPainter {
     return [
       '--circles-offset',
       '--circles-count',
-      '--circles-opacity',
-      '--my-prop'
+      '--circles-opacity'
     ];
   }
 
