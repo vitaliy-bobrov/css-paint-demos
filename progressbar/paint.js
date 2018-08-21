@@ -118,7 +118,7 @@ class ProgressBarPainter {
         this.particles.splice(particlesDiff, Math.abs(particlesDiff));
       }
 
-      this.particles.forEach((p, i) => {
+      this.particles.forEach(p => {
         if (p.x <= 0 || p.x >= padding.left + barW ||
           p.y >= height || p.y <= 0) {
           p.move(ctx, left - rand(spread, -spread), top - rand(spread, -spread));

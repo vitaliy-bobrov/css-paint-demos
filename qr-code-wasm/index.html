@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="https://unpkg.com/papercss@1.4.1/dist/paper.min.css">
+  <link rel="stylesheet" href="styles.css">
+
+  <title>CSS Paint API Demo</title>
+</head>
+<body>
+  <div class="paper container">
+    <h1>QR Code</h1>
+
+    <div class="row flex-center">
+      <div class="sm-6 col border border-primary qr-wrap">
+        <div class="qr"></div>
+      </div>
+
+      <div class="sm-6 col border border-3 border-primary">
+          <label>--qr-link: <span data-prop-reflect="--qr-link"></span>
+            <input type="text"
+                  data-prop-control
+                  data-prop="--qr-link">
+          </label>
+        </div>
+    </div>
+  </div>
+
+  <script src="../js/update-css-variable.js"></script>
+  <script>
+    if ('paintWorklet' in CSS) {
+      CSS.paintWorklet.addModule('paint.js');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+.button {
+  color: #fff;
+  background: linear-gradient(to right, #ee0979, #ff6a00);
+  background: paint(button-particles, #ee0979, #ff6a00);
+}
+
+.button:focus {
+  animation: progress .5s;
+}
+
+@keyframes progress {
+  from {
+    --progress: 0%;
+  }
+
+  to {
+    --progress: 100%;
+  }
+}
