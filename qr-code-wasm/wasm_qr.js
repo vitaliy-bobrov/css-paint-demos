@@ -1,5 +1,4 @@
 import * as wasm from './wasm_qr_bg.wasm';
-console.log(wasm)
 
 let cachedEncoder = new TextEncoder('utf-8');
 
