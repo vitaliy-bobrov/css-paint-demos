@@ -30,7 +30,7 @@
       return;
     }
 
-    document.documentElement.style.setProperty(data.prop, event.target.value);
-    reflectProp(data.prop, event.target.value);
+    document.documentElement.style.setProperty(data.prop, value);
+    reflectProp(data.prop, value);
   }, false);
 })();
