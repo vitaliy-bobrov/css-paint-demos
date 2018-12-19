@@ -22,6 +22,7 @@
     </div>
   </div>
 
+  <script src="../js/load-worklet.js"></script>
   <script>
     if ('registerProperty' in CSS) {
       CSS.registerProperty({
@@ -44,10 +45,6 @@
         inherits: false,
         initialValue: 'green'
       });
-    }
-
-    if ('paintWorklet' in CSS) {
-      CSS.paintWorklet.addModule('paint.js');
     }
 
     const btn = document.querySelector('.js-download');
