@@ -25,11 +25,8 @@
     </label>
   </div>
 
+  <script src="../js/load-worklet.js"></script>
   <script>
-    if ('paintWorklet' in CSS) {
-      CSS.paintWorklet.addModule('paint.js');
-    }
-
     const checkbox = document.querySelector('#material-class');
     const canvas = document.querySelector('.js-pattern');
     const className = 'material';
