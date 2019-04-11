@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/vitaliy-bobrov/css-paint-demos#readme",
   "devDependencies": {
-    "browser-sync": "^2.24.4",
-    "gh-pages": "^1.1.0"
+    "browser-sync": "^2.26.3",
+    "gh-pages": "^2.0.1"
   }
 }
