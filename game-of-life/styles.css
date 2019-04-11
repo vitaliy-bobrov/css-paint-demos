@@ -1,0 +1,14 @@
+:root {
+  --universe-cells: 0;
+  --universe-data: '[]';
+  --universe-grid-color: #ccc;
+  --universe-alive-color: #000;
+}
+
+.game {
+  overflow: hidden;
+  height: 0;
+  padding-top: 50%;
+  background: #000;
+  background: paint(game-of-life);
+}

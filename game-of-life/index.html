@@ -12,23 +12,24 @@
 </head>
 <body>
   <div class="paper container">
-    <h1>QR Code</h1>
+    <h1>Conway's Game of Life</h1>
 
     <div class="row flex-center">
-      <div class="sm-6 col border border-primary qr-wrap">
-        <div class="qr"></div>
-      </div>
+      <div class="sm-6 col border border-primary game"></div>
+    </div>
 
-      <div class="sm-6 col border border-3 border-primary">
-          <label>--qr-link: <span data-prop-reflect="--qr-link"></span>
-            <input type="text"
-                  data-prop-control
-                  data-prop="--qr-link">
-          </label>
-        </div>
+    <div class="sm-6 col border border-3 border-primary">
+      <label>Grid color: <span data-prop-reflect="--universe-grid-color"></span>
+        <input type="color" data-prop-control data-prop="--universe-grid-color">
+      </label>
+
+      <label>Cell color: <span data-prop-reflect="--universe-alive-color"></span>
+        <input type="color" data-prop-control data-prop="--universe-alive-color">
+      </label>
     </div>
   </div>
 
+  <script src='./bootstrap.js'></script>
   <script src="../js/update-css-variable.js"></script>
   <script src="../js/load-worklet.js"></script>
 </body>
